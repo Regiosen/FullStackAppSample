@@ -5,4 +5,4 @@ To properly execute this application in local, the backend of the application mu
 Once the backend is running, the front end part of the applicacion must be executed:
 <div>Open the "FullStackAppSampleFronted" with the console and execute ng serve</div>
 <div>Navigate to localhost:4200</div>
-<div>And the application should be running, if it isn't, contact me at regiosen@gmail.com</div>
+<div>Once this is done the application should be running, if it isn't, contact me at regiosen@gmail.com</div>
