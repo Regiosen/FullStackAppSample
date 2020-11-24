@@ -1,0 +1,62 @@
+<h1 class="d-flex justify-content-center main-title">{{title}}</h1>
+<div class="container">
+  <form #form = "ngForm">
+    <div class="row">
+      <div class="form-group col">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="pedro.perez" required [(ngModel)] = "model.username">
+      </div>
+      
+      <div class="form-group col">
+        <label for="firstName">First Name</label>
+        <input type="text"  class="form-control" id="firstName" name="firstName" placeholder="Pedro" required [(ngModel)] = "model.firstName">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Perez" required [(ngModel)] = "model.lastName">
+      </div>
+      
+      <div class="form-group col">
+        <label for="age">Age</label>
+        <input type="text"  class="form-control" id="age" name="age" placeholder="25" required [(ngModel)] = "model.age">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col">
+        <label for="career">Career</label>
+        <input type="text" class="form-control" id="career" name="career" placeholder="Ingeniero Mecanico" required [(ngModel)] = "model.career">
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <button type="button" class="btn btn-primary" *ngIf="!studentSelected" (click)="insertRow()">Insert New Student</button>
+      <button type="button" class="btn btn-secondary" *ngIf="studentSelected" (click)="deselectRow(form)">Deselect Student</button>
+      <button type="button" class="btn btn-success" *ngIf="studentSelected" (click)="confirmChanges()">Confirm Changes</button>
+    </div>
+  </form>
+</div>
+<hr>
+<div class="container">
+  <div class="row table-header rounded-top">
+    <div class="col d-flex justify-content-center align-middle">Username</div>
+    <div class="col d-flex justify-content-center align-middle">First Name</div>
+    <div class="col d-flex justify-content-center align-middle">Last Name</div>
+    <div class="col d-flex justify-content-center align-middle">Age</div>
+    <div class="col d-flex justify-content-center align-middle">Career</div>
+    <div class="col d-flex justify-content-center align-middle">Actions</div>
+  </div>
+  <div *ngFor="let student of this.a">
+    <div class="row table-content">
+      <div class="col d-flex justify-content-center">{{student.username}}</div>
+      <div class="col d-flex justify-content-center">{{student.firstName}}</div>
+      <div class="col d-flex justify-content-center">{{student.lastName}}</div>
+      <div class="col d-flex justify-content-center">{{student.age}}</div>
+      <div class="col d-flex justify-content-center">{{student.career}}</div>
+      <div class="col d-flex justify-content-center">
+        <button type="button" class="btn btn-danger" (click)="deleteRow(student)">Delete Student</button>
+        <button type="button" class="btn btn-warning" (click)="modifyRow(student)">Modify Student</button>
+      </div>
+    </div>
+  </div>
+</div>

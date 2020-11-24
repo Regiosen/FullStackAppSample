@@ -1,0 +1,16 @@
+.table-header
+{
+    background-color:#373a40;
+    color:#EEEEEE;
+    min-height: 40px;
+}
+.table-content
+{
+    background-color:#686d76;
+    color:#EEEEEE;
+}
+.main-title{
+    background-color:#373a40;
+    color:#19d3da;
+    min-height: 60px;
+}
