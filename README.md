@@ -1,1 +1,8 @@
 # FullStackAppSample
+This project contains both the front end and the backend of an application that modifies a database of students.
+To properly execute this application in local, the backend of the application must be run first:
+  Open the "FullStackAppSample" folder in visual studio and execute it
+Once the backend is running, the front end part of the applicacion must be executed:
+  Open the "FullStackAppSampleFronted" with the console and execute ng serve
+  Navigate to localhost:4200
+And the application should be running, if it isn't, contact me at regiosen@gmail.com
