@@ -5,28 +5,36 @@
       <div class="form-group col">
         <label for="username">Username</label>
         <input type="text" class="form-control" id="username" name="username" placeholder="pedro.perez" required [(ngModel)] = "model.username">
+        <div *ngIf="badUsername" class="warning-message">The username is already in use</div>
+        <div *ngIf="emptyUsername" class="warning-message">Please fill out this field</div>
+
       </div>
       
       <div class="form-group col">
         <label for="firstName">First Name</label>
         <input type="text"  class="form-control" id="firstName" name="firstName" placeholder="Pedro" required [(ngModel)] = "model.firstName">
+        <div *ngIf="emptyFirstName" class="warning-message">Please fill out this field</div>
       </div>
     </div>
     <div class="row">
       <div class="form-group col">
         <label for="lastName">Last Name</label>
         <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Perez" required [(ngModel)] = "model.lastName">
+        <div *ngIf="emptyLastName" class="warning-message">Please fill out this field</div>
       </div>
       
       <div class="form-group col">
         <label for="age">Age</label>
         <input type="text"  class="form-control" id="age" name="age" placeholder="25" required [(ngModel)] = "model.age">
+        <div *ngIf="badAge" class="warning-message">Age must not contain letters or special characters</div>
+        <div *ngIf="emptyAge" class="warning-message">Please fill out this field</div>
       </div>
     </div>
     <div class="row">
       <div class="form-group col">
         <label for="career">Career</label>
         <input type="text" class="form-control" id="career" name="career" placeholder="Ingeniero Mecanico" required [(ngModel)] = "model.career">
+        <div *ngIf="emptyCareer" class="warning-message">Please fill out this field</div>
       </div>
     </div>
     <div class="row d-flex justify-content-center">
@@ -60,3 +68,4 @@
     </div>
   </div>
 </div>
+{{model | json}}

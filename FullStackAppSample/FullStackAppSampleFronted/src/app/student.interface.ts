@@ -3,6 +3,6 @@ export interface StudentInterface {
     username: string;
     firstName: string;
     lastName: string;
-    age: number;
+    age: string;
     career: string;
 }
